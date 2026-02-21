@@ -22,7 +22,7 @@ archives:
     format: zip
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
 
-brews:
+homebrew_casks:
   - name: claude-code-bar
     repository:
       owner: enlabs-org
@@ -30,9 +30,8 @@ brews:
       token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
     homepage: "https://github.com/enlabs-org/claude-code-bar"
     description: "macOS menu bar app showing Claude Code API usage"
-    license: "MIT"
-    install: |
-      bin.install "claude-code-bar"
+    binaries:
+      - claude-code-bar
 
 checksum:
   name_template: "checksums.txt"
